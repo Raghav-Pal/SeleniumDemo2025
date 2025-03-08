@@ -87,7 +87,7 @@ public class LoginTest extends BaseTest {
 
 		Log.info("Adding credentials");
 		test.info("Adding Credentails");
-		loginPage.enterUsername("admin1234");
+		loginPage.enterUsername("admin@yourstore.com");
 		loginPage.enterPassword("admin");
 //		loginPage.enterUsername(username);
 //		loginPage.enterPassword(password);
