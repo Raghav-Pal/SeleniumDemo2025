@@ -75,6 +75,33 @@ public class LoginTest extends BaseTest {
 		test.pass("Login Successful");
 
 	}
+	
+	@Test
+	public void testValidLogin2() {
+
+		Log.info("Starting login test...");
+		test = ExtentReportManager.createTest("Login Test - ");
+
+		test.info("Navigating to URL");
+		LoginPage loginPage = new LoginPage(driver);
+
+		Log.info("Adding credentials");
+		test.info("Adding Credentails");
+		loginPage.enterUsername("admin@yourstore.com");
+		loginPage.enterPassword("admin");
+//		loginPage.enterUsername(username);
+//		loginPage.enterPassword(password);
+		test.info("Clicking on Login button");
+		loginPage.clickLogin();
+
+		System.out.println("Title of the page is : " + driver.getTitle());
+		Log.info("Verifying page title");
+		test.info("Verifying page title");
+		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+
+		test.pass("Login Successful");
+
+	}
 
 //	@Test
 //	public void testLoginWithInvalidCredentials() {
